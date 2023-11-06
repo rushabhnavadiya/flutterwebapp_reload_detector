@@ -5,7 +5,7 @@ import 'package:flutterwebapp_reload_detector/src/browser_events_stub.dart'
 
 class WebAppReloadDetector {
   /// Call `onBrowserReload`  on Top Level Widget only Once
-  static void onReload(Function() reloadCallback, {Function() closeCallback}) {
+  static void onReload(Function() reloadCallback, {Function()? closeCallback}) {
     if (!kIsWeb) return;
     WidgetsFlutterBinding.ensureInitialized();
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -13,7 +13,7 @@ class WebAppReloadDetector {
         BrowserEvents.setWebPPageReloadValue(false);
         reloadCallback.call();
       }else{
-        closeCallback.call();
+        closeCallback?.call();
       }
       BrowserEvents.onUnload
           ?.listen((_) => BrowserEvents.setWebPPageReloadValue(true));
