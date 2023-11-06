@@ -1,6 +1,6 @@
 name: flutterwebapp_reload_detector
 description: flutterwebapp_reload_detector can detect if user refreshed flutterWebApp from Browser
-version: 0.0.1
+version: 1.0.0
 homepage: https://github.com/rohitsangwan01/flutterwebapp_reload_detector.git
 repository: https://github.com/rohitsangwan01/flutterwebapp_reload_detector.git
 
